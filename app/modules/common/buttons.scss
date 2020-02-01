@@ -1,0 +1,40 @@
+/**
+  Buttons & Icons
+ */
+
+[class*="btn__"] {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: $fs-btn;
+
+  transition: .25s;
+}
+.btn {
+
+  &__default {
+    &:hover {
+    }
+  }
+
+}
+
+[class*="icon__"] {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  margin: 4px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  transition: .25s;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+.icon {
+  &__social {
+
+  }
+}

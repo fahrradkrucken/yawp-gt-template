@@ -1,0 +1,264 @@
+/**
+  NF Grid Fixes
+ */
+.nf-form-cont {
+  width: 100%;
+}
+.nf-form-wrap {
+  margin: 0!important;
+}
+.nf-form-errors,
+.nf-error-msg,
+.nf-form-fields-required,
+.nf-field-label,
+.nf-form-hp
+{
+  display: none;
+}
+nf-fields-wrap {
+  display: block;
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  //overflow: hidden;
+  box-sizing: border-box;
+
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+nf-field {
+  display: inline;
+
+  &::after,
+  &::before {
+    content: '';
+    display: none;
+  }
+}
+.nf-field-container {
+  clear: unset!important;
+}
+.nf-form-wrap {
+  padding: 25px 0 25px 0;
+  margin-left: -15px;
+}
+
+/**
+  Form Inputs
+ */
+
+.form-inp {
+  outline: none;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+
+  font-size: $fs-inp;
+  color: $color-font;
+
+  padding: 15px 25px;
+  border: none;
+  background: $color-white;
+
+  transition: .3s;
+
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color-font;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $color-font;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: $color-font;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color-font;
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: inset 0 0 10px 0 $color-blue;
+  }
+
+  &[aria-invalid="true"] {
+    box-shadow: inset 0 0 10px 0 $color-red;
+  }
+}
+textarea.form-inp {
+  width: 100%;
+  resize: vertical;
+}
+select.form-inp {
+  padding-right: 50px;
+  color: $color-font;
+
+  //background: $color-white url("../../img/icon_arr-down-dark.png") no-repeat right 15px center;
+
+  /* Here's the code we need */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+  option {
+    color: $color-font;
+  }
+}
+
+.nf-response-msg {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+}
+
+.nf-error .form-input {
+  //border: 1px solid $bg-red!important;
+}
+
+// --
+// -- Footer Contact Form
+// --
+.footer__form-contact {
+  .nf-form-wrap {
+    padding: 0;
+  }
+
+  [class*="form-col"] {
+    display: block;
+    float: left;
+    clear: both;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+  .form-col {
+    width: 100%;
+
+    &-near-submit {
+      width: calc(100% - 42px);
+    }
+    &-submit {
+      width: 42px;
+      text-align: right;
+    }
+  }
+
+  .form-inp {
+    padding: 8px 16px;
+    background: $color-white;
+    height: 32px;
+
+    transition: .25s;
+
+    &:focus,
+    &:active {
+      box-shadow: inset 0 0 5px 0 $color-blue;
+    }
+
+    &[aria-invalid="true"] {
+      box-shadow: inset 0 0 5px 0 $color-red;
+    }
+  }
+
+  .btn__submit-sm {
+    height: 32px;
+    width: 32px;
+    padding: 0;
+    display: inline-block;
+    border: 2px solid $color-white;
+    border-radius: 0;
+    //background: transparent url("../../img/icon_arrow-right.png") no-repeat center;
+
+    &:active,
+    &:hover {
+      background-color: $color-blue;
+    }
+  }
+}
+
+// --
+// -- Form on white
+// --
+.form-is-white {
+  .form-inp {
+    color: $color-white;
+
+    padding: 15px 0;
+    border-bottom: 1px solid $color-white;
+    background: transparent;
+
+    transition: .25s;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $color-white;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $color-white;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $color-white;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $color-white;
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: none;
+      border-color: $color-blue-light;
+    }
+
+    &[aria-invalid="true"] {
+      box-shadow: none;
+      border-color: $color-red;
+    }
+  }
+  textarea.form-inp {
+    border: 1px solid $color-white;
+    padding: 15px 15px;
+  }
+  select.form-inp {
+    padding-right: 50px;
+    color: $color-white;
+
+    //background: transparent url("../../img/icon_arr-down.png") no-repeat right 15px center;
+
+    /* Here's the code we need */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    &::-ms-expand {
+      display: none;
+    }
+    option {
+      color: $color-font;
+    }
+  }
+
+  .nf-response-msg {
+    display: block;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    color: $color-white;
+    * {
+      color: $color-white;
+    }
+  }
+}

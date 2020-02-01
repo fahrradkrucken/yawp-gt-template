@@ -1,0 +1,99 @@
+/* Padding / Margin */
+
+$space-props: (
+  m:  margin,
+  mt: margin-top,
+  mb: margin-bottom,
+  ml: margin-left,
+  mr: margin-right,
+
+  p:  padding,
+  pt: padding-top,
+  pb: padding-bottom,
+  pl: padding-left,
+  pr: padding-right,
+);
+
+$spacing-step: 10;
+
+@each $class, $prop in $space-props {
+  @for $i from 0 through 6 {
+    .#{$class + '-' + $i} {
+      #{$prop}: #{$spacing-step * $i}px
+    }
+  }
+}
+
+
+@include media-sm-up {
+  @each $class, $prop in $space-props {
+    @for $i from 0 through 6 {
+      .#{$class + '-' + 'sm-' + $i} {
+        #{$prop}: #{10 * $i}px
+      }
+    }
+  }
+}
+
+@include media-md-up {
+  @each $class, $prop in $space-props {
+    @for $i from 0 through 6 {
+      .#{$class + '-' + 'md-' + $i} {
+        #{$prop}: #{10 * $i}px
+      }
+    }
+  }
+}
+
+@include media-lg-up {
+  @each $class, $prop in $space-props {
+    @for $i from 0 through 6 {
+      .#{$class + '-' + 'lg-' + $i} {
+        #{$prop}: #{10 * $i}px
+      }
+    }
+  }
+}
+
+.bg {
+  &-size {
+    &--cover {
+      background-size: cover!important;
+    }
+    &--contain {
+      background-size: contain;
+    }
+    &--original {
+      background-size: auto;
+    }
+  }
+  &-pos {
+    &--cc {
+      background-position: center center;
+    }
+    &--cl {
+      background-position: center left;
+    }
+    &--cr {
+      background-position: center right;
+    }
+    &--tc {
+      background-position: top center;
+    }
+    &--tl {
+      background-position: top left;
+    }
+    &--tr {
+      background-position: top right;
+    }
+    &--bc {
+      background-position: bottom center;
+    }
+    &--bl {
+      background-position: bottom left;
+    }
+    &--br {
+      background-position: bottom right;
+    }
+  }
+}

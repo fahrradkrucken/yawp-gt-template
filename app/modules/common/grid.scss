@@ -1,0 +1,174 @@
+/**
+  Flexbox Grid
+ */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+[class*="flex-col-"] {
+  display: block;
+  width: 100%;
+  padding: #{$column-indent};
+}
+
+.flex {
+
+  &-grid {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    box-sizing: border-box;
+
+    &-center-cols {
+      justify-content: center;
+    }
+  }
+
+  &-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: #{$column-indent};
+    padding-right: #{$column-indent};
+
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+
+  &-content-all-center {
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &-col-align {
+    &-center {
+      margin-left: auto;
+      margin-right: auto;
+      align-self: center;
+    }
+    &-right {
+      margin-left: auto;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    &#{"-col-xs-" + $i} {
+      width: percentage(1 / 12 * $i);
+    }
+  }
+  &-col-half-container-left {
+    padding-left: #{$column-indent * 2};
+    padding-right: #{$column-indent * 2};
+  }
+  &-col-half-container-right {
+    padding-left: #{$column-indent * 2};
+    padding-right: #{$column-indent * 2};
+  }
+
+  @include media-sm-up {
+    &-container {
+      width: #{$bp-sm - $column-indent};
+    }
+    @for $i from 1 through 12 {
+      &#{"-col-sm-" + $i} {
+        width: percentage(1 / 12 * $i);
+      }
+      &#{"-col-sm-order-" + $i} {
+        order: #{$i};
+      }
+    }
+    &-col-half-container-left {
+      padding-left: calc((100% - #{$bp-sm - $column-indent}) / 2 + #{$column-indent * 2});
+      padding-right: calc((100% - #{$bp-sm - $column-indent}) / 2 + #{$column-indent * 2});
+    }
+    &-col-half-container-right {
+      padding-left: calc((100% - #{$bp-sm - $column-indent}) / 2 + #{$column-indent * 2});
+      padding-right: calc((100% - #{$bp-sm - $column-indent}) / 2 + #{$column-indent * 2});
+    }
+  }
+
+  @include media-md-up {
+    &-container {
+      width: #{$bp-md - $column-indent};
+    }
+    @for $i from 1 through 12 {
+      &#{"-col-md-" + $i} {
+        width: percentage(1 / 12 * $i);
+      }
+      &#{"-col-md-order-" + $i} {
+        order: #{$i};
+      }
+    }
+    &-col-half-container-left,
+    &-col-half-container-right {
+      width: 50%;
+    }
+    &-col-half-container-left {
+      padding-right: $column-indent;
+      padding-left: calc((100% - #{$bp-md - $column-indent}) / 2 + #{$column-indent * 2});
+    }
+    &-col-half-container-right {
+      padding-left: $column-indent;
+      padding-right: calc((100% - #{$bp-md - $column-indent}) / 2 + #{$column-indent * 2});
+    }
+  }
+
+  @include media-lg-up {
+    &-container {
+      width: #{$bp-lg - $column-indent};
+    }
+    @for $i from 1 through 12 {
+      &#{"-col-lg-" + $i} {
+        width: percentage(1 / 12 * $i);
+      }
+      &#{"-col-lg-order-" + $i} {
+        order: #{$i};
+      }
+    }
+
+    &#{"-col-lg-1-5"} {
+      width: percentage(1 / 5);
+    }
+
+    &-col-half-container-left,
+    &-col-half-container-right {
+      width: 50%;
+    }
+    &-col-half-container-left {
+      padding-right: $column-indent;
+      padding-left: calc((100% - #{$bp-lg - $column-indent}) / 2 + #{$column-indent * 2});
+    }
+    &-col-half-container-right {
+      padding-left: $column-indent;
+      padding-right: calc((100% - #{$bp-lg - $column-indent}) / 2 + #{$column-indent * 2});
+    }
+  }
+
+  @include media-sm-down {
+    @for $i from 1 through 12 {
+      &#{"-col-xs-" + $i} {
+        width: percentage(1 / 12 * $i);
+      }
+      &#{"-col-xs-order-" + $i} {
+        order: #{$i};
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+/**
+  Colors
+ */
+
+$color-blue: #3256a5;
+$color-blue-light: #17addf;
+$color-blue-dark: #15243f;
+
+$color-red: #ff1d68;
+
+$color-white: #fff;
+$color-black: #0c1018;
+
+$color-gray: #dcdee0;
+
+$color-font: #15243f;
+$color-font-light: #636d84;
+$color-font-active: #17addf;
+
+/* Breakpoints */
+
+$bp-sm: 600px;
+$bp-sm-max: 599px;
+$bp-md: 900px;
+$bp-md-max: 899px;
+$bp-lg: 1200px;
+$bp-lg-max: 1199px;
+
+$column-indent: 15px;
+
+@mixin media-sm-down {
+  @media (max-width: $bp-sm-max) { @content; }
+}
+@mixin media-sm-up {
+  @media (min-width: $bp-sm) { @content; }
+}
+@mixin media-sm-only {
+  @media (min-width: $bp-sm) and (max-width: $bp-md-max) { @content; }
+}
+@mixin media-md-down {
+  @media (max-width: $bp-md-max) { @content; }
+}
+@mixin media-md-up {
+  @media (min-width: $bp-md) { @content; }
+}
+@mixin media-md-only {
+  @media (min-width: $bp-md-max) and (max-width: $bp-lg-max) { @content; }
+}
+@mixin media-lg-down {
+  @media (max-width: $bp-lg-max) { @content; }
+}
+@mixin media-lg-up {
+  @media (min-width: $bp-lg) { @content; }
+}
+
+/* Specific Media Queries - Apple Devices */
+
+@mixin media-iphone-6-7-8 {
+  @media only screen
+  and (min-device-width : 375px)
+  and (max-device-width : 667px) {
+    @content;
+  }
+}
+@mixin media-iphone-6-7-8-plus {
+  @media only screen
+  and (min-device-width : 414px)
+  and (max-device-width : 736px) {
+    @content;
+  }
+}
+@mixin media-iphone-5 {
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 568px) {
+    @content;
+  }
+}
+@mixin media-ipad {
+  @media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px)  {
+    @content;
+  }
+}
+@mixin media-ipad-retina {
+  @media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+/* Text Sizes */
+$fs-point:  px;
+$fs-h1:     60 + $fs-point;
+$fs-h1-sm:  46 + $fs-point;
+$fs-h2:     40 + $fs-point;
+$fs-h2-sm:  36 + $fs-point;
+$fs-h3:     30 + $fs-point;
+$fs-h4:     24 + $fs-point;
+$fs-h5:     20 + $fs-point;
+$fs-h6:     18 + $fs-point;
+$fs-p:      16 + $fs-point;
+
+$fs-bqt:    30 + $fs-point;
+$fs-big:    80 + $fs-point;
+
+$fs-nav:    15 + $fs-point;
+$fs-btn:    18 + $fs-point;
+$fs-inp:    14 + $fs-point;
+$fs-label:  14 + $fs-point;
+
+$fs-footer: 14 + $fs-point;
+
+$font-dashicons: dashicons;
+
+@mixin font-dashicons {
+  font-family: $font-dashicons;
+}
+
+$font-main: #{'Montserrat', sans-serif};
+
+@mixin font-main {
+  font-family: $font-main;
+}
+@mixin font-main-light {
+  font-family: $font-main;
+  font-weight: 300;
+}
+@mixin font-main-regular {
+  font-family: $font-main;
+  font-weight: normal;
+}
+@mixin font-main-bold {
+  font-family: $font-main;
+  font-weight: bold;
+}
+
+@mixin is-flex {
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+}

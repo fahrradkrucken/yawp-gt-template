@@ -1,0 +1,45 @@
+/**
+  Auth styles
+ */
+
+@import "vars";
+
+.login  {
+  //background-color: $color-gray-light;
+
+  h1 a {
+    width: 120px;
+    height: 80px;
+    margin-top: 0;
+    margin-bottom: 0;
+    //background: transparent url("img/logo_ecos-header.png") no-repeat center center;
+    background-size: 120px auto;
+  }
+
+  #login {
+    * {
+      //@include font-volte-medium;
+    }
+
+    #wp-submit {
+      //background-color: $color-blue;
+    }
+
+    a {
+      color: inherit;
+
+      &:hover {
+        //color: $color-blue;
+      }
+    }
+  }
+
+
+  .message,
+  .success {
+    //border-left-color: $color-blue;
+  }
+  #login_error {
+    //border-left-color: $color-red;
+  }
+}

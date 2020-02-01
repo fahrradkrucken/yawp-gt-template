@@ -1,0 +1,285 @@
+/**
+  Fonts & Typography
+ */
+// font-family: 'Montserrat', sans-serif;
+
+
+.screen-reader-text {
+  display: none;
+}
+
+* {
+  @include font-main;
+  word-wrap: break-word;
+  color: $color-font;
+}
+
+// -- Dashicons fix
+[class*=dashicons]::before {
+  font-family: dashicons;
+}
+// -- Dashicons fix
+
+* b, * strong, * .font-bold {
+  @include font-main-bold;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4,
+.font-h1, .font-h2, .font-h3, .font-h4 {
+  line-height: 1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+h5, h6,
+.font-h6, .font-h5 {
+  line-height: 1.6;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  font-weight: normal;
+}
+p {
+  line-height: 1.8;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  font-size: $fs-p;
+}
+
+h1, .font-h1 {
+  font-size: $fs-h1;
+}
+
+h2, .font-h2 {
+  font-size: $fs-h2;
+}
+
+h3, .font-h3 {
+  font-size: $fs-h3;
+}
+
+h4, .font-h4 {
+  font-size: $fs-h4;
+}
+
+h5, .font-h5 {
+  font-size: $fs-h5;
+}
+
+h6, .font-h6 {
+  font-size: $fs-h6;
+}
+
+@include media-sm-down {
+  h1, .font-h1 {
+    font-size: $fs-h1-sm;
+  }
+  h2, .font-h2 {
+    font-size: $fs-h2-sm;
+  }
+  //h3, .font-h3 {
+  //  font-size: $fs-h3-sm;
+  //}
+  //h4, .font-h4 {
+  //  font-size: $fs-h4-sm;
+  //}
+  //h5, .font-h5 {
+  //  font-size: $fs-h5-sm;
+  //}
+  //h6, .font-h6 {
+  //  font-size: $fs-h6-sm;
+  //}
+}
+
+.font-big {
+  font-size: $fs-big;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.font-extrabold {
+  font-weight: 900;
+}
+
+p {
+  font-size: $fs-p;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-weight: 300;
+}
+
+blockquote {
+  display: block;
+  width: 100%;
+  padding: 30px 15px 30px 15px;
+  margin: 15px 0 15px 0;
+  background: $color-blue;
+  text-align: center;
+
+  * {
+    font-size: $fs-bqt;
+    line-height: 1.2;
+    color: $color-white;
+  }
+}
+
+// --
+// -- Styles of typography only for content
+// --
+.the-content {
+
+  img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  //a {
+  //  color: $color-blue;
+  //
+  //  &:hover {
+  //    opacity: .7;
+  //  }
+  //}
+
+  table {
+    width: 100%!important;
+    height: auto!important;
+    margin: 15px auto;
+    border: 1px solid $color-blue;
+    border-spacing: 0;
+    border-collapse: unset;
+
+    tr {
+      &:first-child {
+        td, th {
+          background: $color-blue;
+          font-size: $fs-p;
+          font-weight: bold;
+          text-align: center;
+          * {
+            font-weight: bold;
+          }
+        }
+      }
+      td, th {
+        position: relative;
+        border: 1px solid $color-blue;
+        font-size: $fs-p;
+        padding: 10px;
+        margin: 0;
+      }
+    }
+
+    @include media-sm-down {
+      display: block;
+      position: relative;
+      overflow-x: auto;
+
+      tbody {
+        display: block;
+        min-width: 600px;
+        height: 100%;
+      }
+    }
+  }
+
+  ul, ol {
+    margin-left: 0;
+    padding: 15px 0 15px 25px;
+
+    li {
+      font-size: $fs-p;
+      line-height: 1.8;
+      padding-bottom: 15px;
+    }
+  }
+  ul {
+    li {
+      display: block;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -25px;
+        top: 0;
+        height: 30px;
+        width: 20px;
+        //background: transparent url("../../img/icon_v.png") no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+
+}
+
+.txt {
+
+  &-bold {
+    font-weight: bold;
+  }
+  &-semibold {
+    font-weight: 500;
+  }
+  &-regulat {
+    font-weight: normal;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-right {
+    text-align: right;
+  }
+
+  &-white {
+    color: $color-white
+  }
+
+  &-white-all {
+    * {
+      color: $color-white
+    }
+  }
+}
+
+img {
+  &.alignnone,
+  &.alignleft,
+  &.alignright,
+  &.aligncenter {
+    display: block;
+    position: relative;
+    max-width: 100% !important;
+    height: auto;
+    width: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  &.alignleft {
+    float: left;
+  }
+  &.alignright {
+    float: right;
+  }
+  &.aligncenter {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 2px;
+  background-color: $color-gray;
+  border: none;
+}

@@ -1,0 +1,19 @@
+{
+    "name": "fahrradkrucken/yawp-gt-template",
+    "description": "YAWP GT Theme - Basic template",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6",
+        "fahrradkrucken/yawp-router": "dev-master",
+        "fahrradkrucken/yawp-mailer": "dev-master",
+        "fahrradkrucken/yawp-gt-core": "v1.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "YAWPT\\": "app/src/"
+        }
+    },
+    "scripts": {
+        "post-create-project-cmd": "npm install"
+    }
+}

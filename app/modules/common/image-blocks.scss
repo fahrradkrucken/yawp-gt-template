@@ -1,0 +1,32 @@
+/**
+  Image Blocks
+ */
+
+[class*="img-bg__"] {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.img-bg {
+  &__1x1 {
+    padding-top: percentage(1 / 1);
+  }
+  &__4x3 {
+    padding-top: percentage(3 / 4);
+  }
+  &__3x4 {
+    padding-top: percentage(4 / 3);
+  }
+  &__16x9 {
+    padding-top: percentage(9 / 16);
+  }
+  &__16x10 {
+    padding-top: percentage(10 / 16);
+  }
+
+  &__contain {
+    background-size: contain;
+  }
+
+}
