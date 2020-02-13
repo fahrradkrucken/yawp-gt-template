@@ -7,7 +7,7 @@ const tasks = {
     // -- IMG
     // --
     img() {
-        return gulp.src('./app/img/**')
+        return gulp.src('./app/modules/static/img/**')
             .pipe(imagemin([
                     imagemin.gifsicle({interlaced: true}),
                     imagemin.mozjpeg({progressive: true}),

@@ -17,6 +17,7 @@ mix.sass('app/app.scss', 'static/theme.css')
     .sass('app/app-auth.scss', 'static/theme.auth.css');
 mix.options({
     postCss: [require('autoprefixer')],
+    processCssUrls: true,
     autoprefixer: {
         options: {
             flexbox: true,
